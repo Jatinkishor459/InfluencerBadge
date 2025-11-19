@@ -803,52 +803,52 @@
       }
     });
     
-    // FORM SUBMISSION - WORKING VERSION
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving Data...';
-      submitBtn.disabled = true;
+// FORM SUBMISSION - WITH EMAIL
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const submitBtn = this.querySelector('button[type="submit"]');
+  const originalText = submitBtn.innerHTML;
+  
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving & Sending Email...';
+  submitBtn.disabled = true;
 
-      try {
-        // Collect form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        
-        console.log('Form Data:', data);
-        
-        // ✅ YOUR NEW APPS SCRIPT URL
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxoflwNIxTDRkonzOP1kmsu8DkF84YGuIWC8yfk9VL6banLx8FUAD9bKY6aNAn3A0Vf/exec';
-        
-        // Create URL with parameters
-        const params = new URLSearchParams(data);
-        const urlWithParams = `${scriptURL}?${params.toString()}`;
-        
-        console.log('Sending to:', urlWithParams);
-        
-        // Send data to Google Sheets
-        const response = await fetch(urlWithParams);
-        const result = await response.json();
-        
-        console.log('Response:', result);
-        
-        if (result.success) {
-          form.style.display = 'none';
-          successScreen.classList.add('active');
-          console.log('✅ Success! Data saved to Google Sheets.');
-        } else {
-          throw new Error(result.message);
-        }
-        
-      } catch (error) {
-        console.error('Error:', error);
-        alert('Error: ' + error.message);
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-      }
-    });
+  try {
+    // Collect form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    console.log('Form Data:', data);
+    
+    // ✅ YOUR NEW APPS SCRIPT URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyiFqvoq_-NoSJ4PzNwtyAi2tK7550R8z0OMhWdHYj3jVs_o6B9OJSp_rYvEwjXJXAJ/exec';
+    
+    // Create URL with parameters
+    const params = new URLSearchParams(data);
+    const urlWithParams = `${scriptURL}?${params.toString()}`;
+    
+    console.log('Sending to:', urlWithParams);
+    
+    // Send data to Google Sheets & trigger email
+    const response = await fetch(urlWithParams);
+    const result = await response.json();
+    
+    console.log('Response:', result);
+    
+    if (result.success) {
+      form.style.display = 'none';
+      successScreen.classList.add('active');
+      console.log('✅ Success! Data saved and email sent.');
+    } else {
+      throw new Error(result.message);
+    }
+    
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Error: ' + error.message);
+    submitBtn.innerHTML = originalText;
+    submitBtn.disabled = false;
+  }
+});
   });
 </script>
 </body>
