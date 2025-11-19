@@ -787,18 +787,16 @@
     modalClose.addEventListener('click', function() {
       modal.classList.remove('active');
       document.body.style.overflow = 'auto';
-      // Reset form and show form when closing
       form.reset();
       form.style.display = 'block';
       successScreen.classList.remove('active');
     });
     
-    // Close modal when clicking outside the modal content
+    // Close modal when clicking outside
     modal.addEventListener('click', function(e) {
       if (e.target === modal) {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
-        // Reset form and show form when closing
         form.reset();
         form.style.display = 'block';
         successScreen.classList.remove('active');
@@ -811,47 +809,44 @@
       const submitBtn = this.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
       
-      // Show loading state
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving to Database...';
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving Data...';
       submitBtn.disabled = true;
 
       try {
-        // Collect all form data
+        // Collect form data
         const formData = new FormData(this);
         const data = Object.fromEntries(formData);
         
-        console.log('Form data being sent:', data);
+        console.log('Form Data:', data);
         
-        // YOUR APPS SCRIPT URL
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyX8qC1FU3YhmdQFjICUxeUBf_xDNtMpjU9bpwstOhUczEcTXc4oS9xhrV5vaRGP7Ra/exec';
+        // ✅ YOUR NEW APPS SCRIPT URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxoflwNIxTDRkonzOP1kmsu8DkF84YGuIWC8yfk9VL6banLx8FUAD9bKY6aNAn3A0Vf/exec';
         
-        // Create URL with parameters (GET method - no CORS issues)
+        // Create URL with parameters
         const params = new URLSearchParams(data);
         const urlWithParams = `${scriptURL}?${params.toString()}`;
         
-        console.log('Sending to URL:', urlWithParams);
+        console.log('Sending to:', urlWithParams);
         
-        // Send data using GET (simple method that works)
+        // Send data to Google Sheets
         const response = await fetch(urlWithParams);
+        const result = await response.json();
         
-        // If we get here, the request was sent successfully
-        console.log('Request sent successfully');
+        console.log('Response:', result);
         
-        // Always show success (data will be saved in background)
-        form.style.display = 'none';
-        successScreen.classList.add('active');
-        
-        console.log('Success screen shown');
+        if (result.success) {
+          form.style.display = 'none';
+          successScreen.classList.add('active');
+          console.log('✅ Success! Data saved to Google Sheets.');
+        } else {
+          throw new Error(result.message);
+        }
         
       } catch (error) {
         console.error('Error:', error);
-        
-        // Even if there's an error, show success screen
-        // (data might still be saved in background)
-        form.style.display = 'none';
-        successScreen.classList.add('active');
-        
-        console.log('Success screen shown despite error');
+        alert('Error: ' + error.message);
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
       }
     });
   });
