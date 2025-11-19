@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -66,6 +66,390 @@
 
   /* RESPONSIVE */
   @media(max-width:980px){.hero{grid-template-columns:1fr}.features{grid-template-columns:1fr}.panels{grid-template-columns:1fr}nav ul{display:none}}
+
+  /* REGISTRATION FORM MODAL */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 4, 9, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-content {
+    background: rgba(15, 17, 22, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+  
+  .modal-overlay.active .modal-content {
+    transform: translateY(0);
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .modal-close {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-close:hover {
+    color: var(--accent1);
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .form-section {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  
+  .section-header {
+    color: var(--accent1);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: var(--accent1);
+    box-shadow: 0 0 0 3px rgba(212, 161, 106, 0.1);
+  }
+  
+  /* FIXED SELECT STYLING */
+  .form-select {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23b9c0c8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding-right: 40px;
+  }
+  
+  .form-select:focus {
+    outline: none;
+    border-color: var(--accent1);
+    box-shadow: 0 0 0 3px rgba(212, 161, 106, 0.1);
+  }
+  
+  .form-select option {
+    background: var(--card);
+    color: white;
+    padding: 10px;
+  }
+  
+  textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .terms-container {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    margin: 25px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  
+  .terms-container input[type="checkbox"] {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent1);
+  }
+  
+  .terms-text {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .terms-link {
+    color: var(--accent1);
+    text-decoration: none;
+  }
+  
+  .terms-link:hover {
+    text-decoration: underline;
+  }
+  
+  .form-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .form-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: all 0.5s ease;
+  }
+  
+  .form-btn:hover::before {
+    left: 100%;
+  }
+  
+  .form-btn-primary {
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    color: #081018;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  .btn-loading {
+    position: relative;
+    color: transparent !important;
+  }
+  
+  .btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .security-note {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .progress-indicator {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    gap: 5px;
+  }
+  
+  .progress-step {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .progress-step.active {
+    background: var(--accent1);
+    transform: scale(1.2);
+  }
+  
+  .success-screen {
+    text-align: center;
+    padding: 40px 20px;
+    display: none;
+  }
+  
+  .success-screen.active {
+    display: block;
+  }
+  
+  .success-icon {
+    font-size: 64px;
+    color: var(--accent1);
+    margin-bottom: 20px;
+  }
+  
+  .success-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .success-message {
+    color: var(--muted);
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .google-form-btn {
+    background: linear-gradient(135deg, #4285F4, #34A853);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .google-form-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    color: white;
+  }
+  
+  .form-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .form-options {
+      flex-direction: column;
+    }
+  }
+  
+  .logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .logo-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 30px;
+  }
 </style>
 </head>
 <body>
@@ -73,20 +457,194 @@
 <!-- Loader -->
 <div id="loader" aria-hidden="true">
   <div class="loader-box">
-    <img class="loader-logo" src="https://uploads.onecompiler.io/43wnmpeqg/444yzbuyp/1000010249.jpg" alt="logo">
+    <div class="logo-text">InfluencerBadge</div>
     <div class="loader-anim" aria-hidden="true"></div>
     <div style="color:var(--muted);font-size:13px">Preparing Influencer Badge...</div>
+  </div>
+</div>
+
+<!-- Registration Form Modal -->
+<div class="modal-overlay" id="registrationModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">
+        <i class="fas fa-badge-check"></i>
+        Join InfluencerBadge
+      </h2>
+      <button class="modal-close" id="modalClose">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="progress-indicator">
+      <div class="progress-step active"></div>
+      <div class="progress-step"></div>
+      <div class="progress-step"></div>
+    </div>
+    
+    <!-- Success Screen (Hidden by default) -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div class="logo-text">InfluencerBadge</div>
+      <div class="logo-subtitle">Verified Creators • Brand Campaigns</div>
+      <h2 class="success-title">Application Submitted!</h2>
+      <p class="success-message">
+        Thank you for applying to InfluencerBadge! Our team will review your application 
+        and get back to you within 3-5 business days. In the meantime, you can complete 
+        our detailed Google Form to expedite the verification process.
+      </p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvy1ITctWpbaBQMXvNqcf19psNptQL_9LjVeUzEw4dNwl0QQ/viewform" 
+         target="_blank" class="google-form-btn">
+        <i class="fab fa-google"></i>
+        Complete Google Form
+      </a>
+    </div>
+    
+    <!-- Registration Form -->
+    <form id="signupForm">
+      <!-- Personal Information Section -->
+      <div class="form-section">
+        <h3 class="section-header">
+          <i class="fas fa-user"></i>
+          Personal Information
+        </h3>
+        
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Password *</label>
+            <input type="password" class="form-control" name="password" placeholder="Create a password" required minlength="6">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Age *</label>
+            <input type="number" class="form-control" name="age" placeholder="Your age" required min="13" max="100">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Gender *</label>
+            <select class="form-select" name="gender" required>
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Media Information Section -->
+      <div class="form-section">
+        <h3 class="section-header">
+          <i class="fas fa-hashtag"></i>
+          Social Media Information
+        </h3>
+        
+        <div class="form-group">
+          <label class="form-label">Instagram Handle *</label>
+          <input type="text" class="form-control" name="instagram" placeholder="@yourusername" required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Instagram Followers *</label>
+            <input type="number" class="form-control" name="followers" placeholder="Followers count" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">YouTube Subscribers</label>
+            <input type="number" class="form-control" name="subscribers" placeholder="Subscribers count">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">YouTube Channel Link</label>
+          <input type="url" class="form-control" name="youtube_link" placeholder="https://youtube.com/yourchannel">
+        </div>
+      </div>
+
+      <!-- Category & Account Type Section -->
+      <div class="form-section">
+        <h3 class="section-header">
+          <i class="fas fa-tags"></i>
+          Category & Account Type
+        </h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Primary Category *</label>
+            <select class="form-select" name="category" required>
+              <option value="">Select your niche</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Beauty">Beauty</option>
+              <option value="Lifestyle">Lifestyle</option>
+              <option value="Travel">Travel</option>
+              <option value="Food">Food</option>
+              <option value="Tech">Tech</option>
+              <option value="Gaming">Gaming</option>
+              <option value="Fitness">Fitness</option>
+              <option value="Education">Education</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Account Type *</label>
+            <select class="form-select" name="account_type" required>
+              <option value="">Select account type</option>
+              <option value="Influencer">Influencer/Creator</option>
+              <option value="Brand">Brand/Company</option>
+              <option value="Agency">Agency</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms & Conditions -->
+      <div class="terms-container">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms" class="terms-text">
+          I agree to the <a href="#" class="terms-link">Terms of Service</a> and 
+          <a href="#" class="terms-link">Privacy Policy</a>. I understand that my data will be 
+          stored in our secure database and used for verification and brand collaborations.
+        </label>
+      </div>
+
+      <div class="form-options">
+        <button type="submit" class="form-btn form-btn-primary">
+          <i class="fas fa-user-plus"></i>
+          Create Account & Get Verified
+        </button>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvy1ITctWpbaBQMXvNqcf19psNptQL_9LjVeUzEw4dNwl0QQ/viewform" 
+           target="_blank" class="form-btn google-form-btn">
+          <i class="fab fa-google"></i>
+          Use Google Form
+        </a>
+      </div>
+      
+      <div class="security-note">
+        <i class="fas fa-shield-alt"></i>
+        Your data is secure and will only be used for verification and brand collaborations
+      </div>
+    </form>
   </div>
 </div>
 
 <header>
   <div class="container nav">
     <div class="brand">
-      <img class="logo-img" src="https://uploads.onecompiler.io/43wnmpeqg/444yzbuyp/1000010249.jpg" alt="IB logo">
-      <div>
-        <div style="font-weight:800;font-size:16px">Influencer Badge</div>
-        <div style="font-size:12px;color:var(--muted)">Verified creators • Brand campaigns</div>
-      </div>
+      <div class="logo-text" style="font-size: 18px;">InfluencerBadge</div>
     </div>
 
     <div style="display:flex;align-items:center;gap:12px">
@@ -104,7 +662,7 @@
         <a href="https://whatsapp.com/channel/0029Vb9voZx0wak18qGnHv44" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
 
-      <a class="btn" href="https://forms.gle/XM7kmB5srV6zv9CL6" target="_blank" rel="noopener noreferrer">Apply Now</a>
+      <a class="btn" href="#" id="applyNowBtn">Apply Now</a>
     </div>
   </div>
 </header>
@@ -117,7 +675,7 @@
       <p class="lead">Influencer Badge connects creators with brands — verified badges, campaign management and secure approvals. Complete the form to apply.</p>
 
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-        <a class="btn" href="https://forms.gle/XM7kmB5srV6zv9CL6" target="_blank">Apply for Badge</a>
+        <a class="btn" href="#" id="creatorSignupBtn">Apply for Badge</a>
         <a class="btn" href="#creator" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)">Creator Dashboard</a>
       </div>
 
@@ -133,10 +691,10 @@
 
     <aside>
       <div class="card">
-        <img src="https://uploads.onecompiler.io/43wnmpeqg/444yzbuyp/1000010249.jpg" alt="preview" style="width:100%;border-radius:10px;margin-bottom:12px">
+        <div class="logo-text">InfluencerBadge</div>
         <div style="font-weight:700;margin-bottom:8px">Quick actions</div>
         <div style="display:flex;flex-direction:column;gap:8px">
-          <a class="btn" href="https://forms.gle/XM7kmB5srV6zv9CL6" target="_blank" style="text-align:center">Creator Signup</a>
+          <a class="btn" href="#" id="creatorSignupBtn2">Creator Signup</a>
           <a class="btn" href="#" style="text-align:center;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">Brand Signup</a>
         </div>
       </div>
@@ -204,6 +762,75 @@
   window.addEventListener('load', ()=> {
     const loader = document.getElementById('loader');
     setTimeout(()=>{ loader.classList.add('hidden'); }, 700);
+  });
+
+  // Registration Form Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('registrationModal');
+    const modalClose = document.getElementById('modalClose');
+    const applyNowBtn = document.getElementById('applyNowBtn');
+    const creatorSignupBtn = document.getElementById('creatorSignupBtn');
+    const creatorSignupBtn2 = document.getElementById('creatorSignupBtn2');
+    const form = document.getElementById('signupForm');
+    const successScreen = document.getElementById('successScreen');
+    
+    // Show modal when any signup button is clicked
+    [applyNowBtn, creatorSignupBtn, creatorSignupBtn2].forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    // Close modal when close button is clicked
+    modalClose.addEventListener('click', function() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      // Reset form and show form when closing
+      form.reset();
+      form.style.display = 'block';
+      successScreen.classList.remove('active');
+    });
+    
+    // Close modal when clicking outside the modal content
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        // Reset form and show form when closing
+        form.reset();
+        form.style.display = 'block';
+        successScreen.classList.remove('active');
+      }
+    });
+    
+    // Form submission handler
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.classList.add('btn-loading');
+      submitBtn.disabled = true;
+
+      // Collect all form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      console.log('Form data collected:', data);
+      
+      // Simulate API call
+      setTimeout(() => {
+        submitBtn.classList.remove('btn-loading');
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        
+        // Show success screen
+        form.style.display = 'none';
+        successScreen.classList.add('active');
+      }, 2000);
+    });
   });
 </script>
 </body>
