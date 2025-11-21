@@ -459,6 +459,32 @@
             margin-top: 35px;
         }
 
+        /* DASHBOARD STUBS */
+        .stub {
+            background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            padding: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            text-align: left;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .table th {
+            color: var(--accent1);
+            font-weight: 600;
+        }
+
         /* SOCIALS */
         .social {
             display: flex;
@@ -1504,6 +1530,113 @@
             margin-top: 5px;
         }
 
+        /* Progress Indicator */
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+            gap: 8px;
+        }
+        
+        .progress-step {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .progress-step.active {
+            background: var(--accent1);
+            transform: scale(1.3);
+        }
+        
+        /* Success Screen */
+        .success-screen {
+            text-align: center;
+            padding: 40px 20px;
+            display: none;
+        }
+        
+        .success-screen.active {
+            display: block;
+        }
+        
+        .success-icon {
+            font-size: 64px;
+            color: var(--accent1);
+            margin-bottom: 20px;
+        }
+        
+        .success-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .success-message {
+            color: var(--muted);
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .google-form-btn {
+            background: linear-gradient(135deg, #4285F4, #34A853);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        
+        .google-form-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            color: white;
+        }
+        
+        .form-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Hero Logo */
+        .hero-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .hero-logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Developer Notes */
+        .dev-notes {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
         /* MOBILE RESPONSIVE DESIGN */
         @media (max-width: 980px) {
             .hero {
@@ -1604,6 +1737,10 @@
 
             .steps-container {
                 grid-template-columns: 1fr;
+            }
+
+            .form-options {
+                flex-direction: column;
             }
         }
 
@@ -1761,16 +1898,182 @@
         </div>
     </div>
 
-    <!-- Registration Modals -->
-    <div class="modal-overlay" id="creatorModal" aria-hidden="true" aria-labelledby="creatorModalTitle">
+    <!-- Registration Modal -->
+    <div class="modal-overlay" id="registrationModal">
         <div class="modal-content" role="dialog" aria-modal="true">
-            <!-- Modal content remains the same -->
-        </div>
-    </div>
+            <div class="modal-header">
+                <div class="modal-logo-container">
+                    <img src="influencer%20badge%20logo.jpeg" alt="InfluencerBadge Logo" class="modal-logo">
+                    <h2 class="modal-title">Join InfluencerBadge</h2>
+                </div>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="progress-indicator">
+                <div class="progress-step active"></div>
+                <div class="progress-step"></div>
+                <div class="progress-step"></div>
+            </div>
+            
+            <!-- Success Screen (Hidden by default) -->
+            <div class="success-screen" id="successScreen">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <img src="influencer%20badge%20logo.jpeg" alt="InfluencerBadge Logo" style="width:80px;height:80px;border-radius:16px;margin:0 auto 15px;display:block;border:3px solid rgba(255,255,255,0.1)">
+                <div class="logo-text">InfluencerBadge</div>
+                <div class="logo-subtitle">VERIFIED CREATORS • BRAND CAMPAIGNS</div>
+                <h2 class="success-title">Application Submitted!</h2>
+                <p class="success-message">
+                    Thank you for applying to InfluencerBadge! Our team will review your application 
+                    and get back to you within 3-5 business days. In the meantime, you can complete 
+                    our detailed Google Form to expedite the verification process.
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScvy1ITctWpbaBQMXvNqcf19psNptQL_9LjVeUzEw4dNwl0QQ/viewform" 
+                   target="_blank" class="google-form-btn">
+                    <i class="fab fa-google"></i>
+                    Complete Google Form
+                </a>
+            </div>
+            
+            <!-- Registration Form -->
+            <form id="signupForm">
+                <!-- Personal Information Section -->
+                <div class="form-section">
+                    <h3 class="section-header">
+                        <i class="fas fa-user"></i>
+                        Personal Information
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Password *</label>
+                            <input type="password" class="form-control" name="password" placeholder="Create a password" required minlength="6">
+                        </div>
+                    </div>
 
-    <div class="modal-overlay" id="brandModal" aria-hidden="true" aria-labelledby="brandModalTitle">
-        <div class="modal-content" role="dialog" aria-modal="true">
-            <!-- Modal content remains the same -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Age *</label>
+                            <input type="number" class="form-control" name="age" placeholder="Your age" required min="13" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Gender *</label>
+                            <select class="form-select" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Information Section -->
+                <div class="form-section">
+                    <h3 class="section-header">
+                        <i class="fas fa-hashtag"></i>
+                        Social Media Information
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Instagram Handle *</label>
+                        <input type="text" class="form-control" name="instagram" placeholder="@yourusername" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Instagram Followers *</label>
+                            <input type="number" class="form-control" name="followers" placeholder="Followers count" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">YouTube Subscribers</label>
+                            <input type="number" class="form-control" name="subscribers" placeholder="Subscribers count">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">YouTube Channel Link</label>
+                        <input type="url" class="form-control" name="youtube_link" placeholder="https://youtube.com/yourchannel">
+                    </div>
+                </div>
+
+                <!-- Category & Account Type Section -->
+                <div class="form-section">
+                    <h3 class="section-header">
+                        <i class="fas fa-tags"></i>
+                        Category & Account Type
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Primary Category *</label>
+                            <select class="form-select" name="category" required>
+                                <option value="">Select your niche</option>
+                                <option value="Fashion">Fashion</option>
+                                <option value="Beauty">Beauty</option>
+                                <option value="Lifestyle">Lifestyle</option>
+                                <option value="Travel">Travel</option>
+                                <option value="Food">Food</option>
+                                <option value="Tech">Tech</option>
+                                <option value="Gaming">Gaming</option>
+                                <option value="Fitness">Fitness</option>
+                                <option value="Education">Education</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Account Type *</label>
+                            <select class="form-select" name="account_type" required>
+                                <option value="">Select account type</option>
+                                <option value="Influencer">Influencer/Creator</option>
+                                <option value="Brand">Brand/Company</option>
+                                <option value="Agency">Agency</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="terms-container">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" class="terms-text">
+                        I agree to the <a href="#" class="terms-link">Terms of Service</a> and 
+                        <a href="#" class="terms-link">Privacy Policy</a>. I understand that my data will be 
+                        stored in our secure database and used for verification and brand collaborations.
+                    </label>
+                </div>
+
+                <div class="form-options">
+                    <button type="submit" class="form-btn form-btn-creator">
+                        <i class="fas fa-user-plus"></i>
+                        Create Account & Get Verified
+                    </button>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScvy1ITctWpbaBQMXvNqcf19psNptQL_9LjVeUzEw4dNwl0QQ/viewform" 
+                       target="_blank" class="form-btn google-form-btn">
+                        <i class="fab fa-google"></i>
+                        Use Google Form
+                    </a>
+                </div>
+                
+                <div class="security-note">
+                    <i class="fas fa-shield-alt"></i>
+                    Your data is secure and will only be used for verification and brand collaborations
+                </div>
+            </form>
         </div>
     </div>
 
@@ -1796,6 +2099,7 @@
                 <nav role="navigation" aria-label="Main navigation">
                     <ul id="mainNav">
                         <li><a href="#features">Features</a></li>
+                        <li><a href="#panels">Panels</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#faq">FAQ</a></li>
@@ -1832,7 +2136,9 @@
             <section class="hero fade-in">
                 <div>
                     <div class="main-brand">
-                        <img src="influencer%20badge%20logo.jpeg" alt="InfluencerBadge Logo" class="main-logo" loading="lazy">
+                        <div class="hero-logo">
+                            <img src="influencer%20badge%20logo.jpeg" alt="InfluencerBadge Logo" class="hero-logo-img" loading="lazy">
+                        </div>
                         <div>
                             <div class="brand-name">InfluencerBadge</div>
                             <div class="brand-tagline">Verified Creators • Premium Brands</div>
@@ -1879,15 +2185,22 @@
 
                 <aside aria-label="Why choose us">
                     <div class="card">
-                        <div style="font-weight:700;margin-bottom:15px;color:var(--accent1);font-size:16px">Why Choose Us?</div>
-                        <div style="color:var(--muted);line-height:1.6;margin-bottom:20px">
-                            • Verified creator network<br>
-                            • Premium brand partnerships<br>
-                            • Secure payment system<br>
-                            • Advanced analytics<br>
-                            • 24/7 support
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:15px">
+                            <img src="influencer%20badge%20logo.jpeg" alt="Logo" style="width:40px;height:40px;border-radius:10px">
+                            <div class="logo-text" style="font-size:20px">InfluencerBadge</div>
                         </div>
-                        <div class="progress-bar">
+                        <div style="font-weight:700;margin-bottom:15px;color:var(--accent1);font-size:16px">Quick Access</div>
+                        <div style="display:flex;flex-direction:column;gap:12px">
+                            <a class="btn btn-creator" href="#" id="creatorSignupBtn2">
+                                <i class="fas fa-user-plus"></i>
+                                Creator Signup
+                            </a>
+                            <a class="btn btn-brand" href="#" id="brandSignupBtn2">
+                                <i class="fas fa-building"></i>
+                                Brand Signup
+                            </a>
+                        </div>
+                        <div class="progress-bar" style="margin:20px 0">
                             <div class="progress-fill" style="width: 95%"></div>
                         </div>
                         <div style="color:var(--muted);font-size:14px">95% Success Rate</div>
@@ -1910,6 +2223,39 @@
                     <div class="feature">
                         <strong style="color:var(--accent1);font-size:20px">Advanced Analytics</strong>
                         <p style="color:var(--muted);margin:12px 0 0;line-height:1.6">Comprehensive performance metrics and insights dashboard for both creators and brands to track campaign success and ROI.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panels Section -->
+            <section id="panels" class="fade-in">
+                <h2 style="font-size:32px;margin-top:40px;text-align:center;background:linear-gradient(135deg, var(--text-primary) 30%, var(--accent1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Dashboard Panels</h2>
+                <div class="panels">
+                    <div class="stub">
+                        <h3 style="color:var(--accent1);margin-top:0">Creator Dashboard</h3>
+                        <p style="color:var(--muted);margin-bottom:15px">Manage your profile, track applications, and access exclusive brand campaigns designed for verified creators.</p>
+                        <table class="table">
+                            <thead><tr><th>Name</th><th>Platform</th><th>Status</th></tr></thead>
+                            <tbody>
+                                <tr><td>Example Creator</td><td>Instagram</td><td style="color:var(--accent1)">Verified</td></tr>
+                                <tr><td>Another Creator</td><td>YouTube</td><td style="color:var(--accent2)">Pending</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="stub" id="admin">
+                        <h3 style="color:var(--accent1);margin-top:0">Admin Panel</h3>
+                        <p style="color:var(--muted);margin-bottom:15px">Review applications, approve badges, manage campaigns, and maintain platform quality with powerful admin tools.</p>
+                        <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">
+                            <a class="btn" href="#" style="background:#111;border:1px solid rgba(255,255,255,0.04)">
+                                <i class="fas fa-tasks"></i>
+                                Review Queue
+                            </a>
+                            <a class="btn btn-secondary" href="#">
+                                <i class="fas fa-bullhorn"></i>
+                                Manage Campaigns
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -2000,6 +2346,14 @@
                 </form>
             </section>
 
+            <!-- Developer Notes -->
+            <section class="dev-notes fade-in">
+                <h3 style="font-size:22px;color:var(--accent1);margin-top:0">Developer Notes</h3>
+                <p style="color:var(--muted);line-height:1.6;margin:0">
+                    This template is fully responsive and includes all features from both versions. The registration form integrates with Google Apps Script for data collection and email notifications. For full backend functionality, connect to Firebase or a custom Node.js backend.
+                </p>
+            </section>
+
             <!-- Founder Section -->
             <section id="founder" class="founder-section-main fade-in" aria-labelledby="founder-heading">
                 <div class="founder-avatar">
@@ -2052,6 +2406,7 @@
                 // Initialize animations
                 initAnimations();
                 initCountingNumbers();
+                initFAQ();
                 
                 // Preload critical images after initial load
                 const criticalImages = document.querySelectorAll('img[loading="lazy"]');
@@ -2438,35 +2793,93 @@
                 });
             }
 
-            // Initialize FAQ
-            initFAQ();
-
-            // Modal functionality
-            const creatorModal = document.getElementById('creatorModal');
-            const brandModal = document.getElementById('brandModal');
-            const creatorApplyBtn = document.getElementById('creatorApplyBtn');
+            // Registration Form Functionality
+            const modal = document.getElementById('registrationModal');
+            const modalClose = document.getElementById('modalClose');
+            const applyNowBtn = document.getElementById('creatorApplyBtn');
             const brandApplyBtn = document.getElementById('brandApplyBtn');
             const heroCreatorBtn = document.getElementById('heroCreatorBtn');
             const heroBrandBtn = document.getElementById('heroBrandBtn');
-
-            // Add event listeners for modal buttons
-            [creatorApplyBtn, heroCreatorBtn].forEach(btn => {
+            const creatorSignupBtn2 = document.getElementById('creatorSignupBtn2');
+            const brandSignupBtn2 = document.getElementById('brandSignupBtn2');
+            const form = document.getElementById('signupForm');
+            const successScreen = document.getElementById('successScreen');
+            
+            // Show modal when any signup button is clicked
+            [applyNowBtn, brandApplyBtn, heroCreatorBtn, heroBrandBtn, creatorSignupBtn2, brandSignupBtn2].forEach(btn => {
                 if (btn) {
-                    btn.addEventListener('click', (e) => {
+                    btn.addEventListener('click', function(e) {
                         e.preventDefault();
-                        // Open creator modal
-                        console.log('Creator apply clicked');
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
                     });
                 }
             });
+            
+            // Close modal when close button is clicked
+            modalClose.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                form.reset();
+                form.style.display = 'block';
+                successScreen.classList.remove('active');
+            });
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    form.reset();
+                    form.style.display = 'block';
+                    successScreen.classList.remove('active');
+                }
+            });
+            
+            // FORM SUBMISSION - WITH EMAIL
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving & Sending Email...';
+                submitBtn.disabled = true;
 
-            [brandApplyBtn, heroBrandBtn].forEach(btn => {
-                if (btn) {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        // Open brand modal
-                        console.log('Brand apply clicked');
-                    });
+                try {
+                    // Collect form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    console.log('Form Data:', data);
+                    
+                    // ✅ YOUR NEW APPS SCRIPT URL
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwdnhRU3ehzRrlbLf7IFxOhKXT7eJk5nw1JN5Ia48xHpCML_xUJVOBT_9c4iisps22E/exec';
+                    
+                    // Create URL with parameters
+                    const params = new URLSearchParams(data);
+                    const urlWithParams = `${scriptURL}?${params.toString()}`;
+                    
+                    console.log('Sending to:', urlWithParams);
+                    
+                    // Send data to Google Sheets & trigger email
+                    const response = await fetch(urlWithParams);
+                    const result = await response.json();
+                    
+                    console.log('Response:', result);
+                    
+                    if (result.success) {
+                        form.style.display = 'none';
+                        successScreen.classList.add('active');
+                        console.log('✅ Success! Data saved and email sent.');
+                    } else {
+                        throw new Error(result.message);
+                    }
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error: ' + error.message);
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
                 }
             });
 
