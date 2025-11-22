@@ -271,6 +271,21 @@
             animation: none;
         }
 
+        /* Founder Button Avatar */
+        .founder-btn-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .founder-btn:hover .founder-btn-avatar {
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
         /* Premium Mobile Menu */
         .mobile-menu-btn {
             display: none;
@@ -676,78 +691,108 @@
             margin-bottom: 25px;
         }
 
-        /* Premium Founder Section */
-        .founder-section-main {
-            text-align: center;
-            padding: 50px 40px;
+        /* Enhanced Founder Section */
+        .founder-profile {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: center;
+            margin: 80px 0;
+            padding: 60px;
             background: linear-gradient(135deg, rgba(255,255,255,0.03), transparent);
-            border-radius: 24px;
+            border-radius: 30px;
             border: 1px solid rgba(255,255,255,0.08);
-            margin: 50px 0;
-            position: relative;
-            overflow: hidden;
         }
 
-        .founder-section-main::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212,161,106,0.05) 0%, transparent 70%);
-            z-index: -1;
+        .founder-image-container {
+            text-align: center;
         }
 
-        [data-theme="light"] .founder-section-main {
-            background: linear-gradient(135deg, rgba(0,0,0,0.02), transparent);
-            border: 1px solid rgba(0,0,0,0.08);
+        .founder-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 25px;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.1);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
         }
 
-        .founder-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
+        .founder-image:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 30px 70px rgba(212,161,106,0.3);
+        }
+
+        .founder-bio {
+            padding: 20px 0;
+        }
+
+        .founder-bio h3 {
+            color: var(--accent1);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .founder-role {
+            color: var(--accent2);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .founder-story {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .founder-achievements {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .achievement {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .achievement:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .achievement-icon {
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
+            font-size: 20px;
             color: white;
-            border: 4px solid rgba(255,255,255,0.1);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
-        .founder-quote {
-            font-style: italic;
+        .achievement-content h4 {
+            color: var(--text-primary);
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+        }
+
+        .achievement-content p {
             color: var(--muted);
-            margin: 20px 0;
-            line-height: 1.7;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: clamp(1rem, 2vw, 1.1rem);
-            position: relative;
-        }
-
-        .founder-quote::before,
-        .founder-quote::after {
-            content: '"';
-            font-size: 40px;
-            color: var(--accent1);
-            position: absolute;
-            opacity: 0.3;
-        }
-
-        .founder-quote::before {
-            top: -20px;
-            left: -30px;
-        }
-
-        .founder-quote::after {
-            bottom: -40px;
-            right: -30px;
+            margin: 0;
+            font-size: 0.9rem;
         }
 
         /* Premium Founder Button */
@@ -798,18 +843,6 @@
 
         .founder-btn:active {
             transform: translateY(-2px);
-        }
-
-        .founder-btn-icon {
-            color: #e94560;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .founder-btn:hover .founder-btn-icon,
-        .founder-btn:focus .founder-btn-icon {
-            color: #f39c12;
-            transform: scale(1.2) rotate(10deg);
         }
 
         .founder-btn-name {
@@ -2116,6 +2149,437 @@
             font-size: 14px;
         }
 
+        /* ========== NEW FEATURES STYLES ========== */
+
+        /* Analytics Section Styles */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .analytics-card {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .analytics-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .time-filter select {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-primary);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .metric-value {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent1);
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-change {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .metric-change.positive {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        .demographics {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .demo-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .demo-label {
+            color: var(--muted);
+            font-size: 14px;
+            min-width: 80px;
+        }
+
+        .demo-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .demo-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        .demo-percent {
+            color: var(--accent1);
+            font-weight: 700;
+            font-size: 14px;
+            min-width: 40px;
+            text-align: right;
+        }
+
+        /* Campaign Discovery Styles */
+        .campaign-filters {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            background: rgba(255,255,255,0.03);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-group label {
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .filter-group select {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-primary);
+            padding: 10px 15px;
+            border-radius: 10px;
+            min-width: 150px;
+        }
+
+        .campaigns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .campaign-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .campaign-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+        }
+
+        .campaign-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+
+        .campaign-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .campaign-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .match-badge {
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            color: #000;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .campaign-brand {
+            color: var(--accent1);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .campaign-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .campaign-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .detail-label {
+            color: var(--muted);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .campaign-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* Enhanced Founder Section */
+        .founder-profile {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: center;
+            margin: 80px 0;
+            padding: 60px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03), transparent);
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .founder-image-container {
+            text-align: center;
+        }
+
+        .founder-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 25px;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.1);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
+        }
+
+        .founder-image:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 30px 70px rgba(212,161,106,0.3);
+        }
+
+        .founder-bio {
+            padding: 20px 0;
+        }
+
+        .founder-bio h3 {
+            color: var(--accent1);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .founder-role {
+            color: var(--accent2);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .founder-story {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .founder-achievements {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .achievement {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .achievement:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .achievement-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .achievement-content h4 {
+            color: var(--text-primary);
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+        }
+
+        .achievement-content p {
+            color: var(--muted);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* UX Improvements */
+        .progress-tracker {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            z-index: 10000;
+        }
+
+        .progress-tracker-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .floating-notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.4s ease;
+            max-width: 300px;
+        }
+
+        .floating-notification.show {
+            transform: translateX(0);
+        }
+
+        .hint-tooltip {
+            position: relative;
+            cursor: help;
+        }
+
+        .hint-tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            z-index: 1000;
+        }
+
+        .hint-tooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .interactive-demo {
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .interactive-demo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
         /* MOBILE RESPONSIVE DESIGN */
         @media (max-width: 1080px) {
             .hero {
@@ -2232,6 +2696,48 @@
             }
 
             .admin-stats {
+                grid-template-columns: 1fr;
+            }
+
+            /* New Features Mobile */
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .analytics-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .campaign-filters {
+                flex-direction: column;
+            }
+            
+            .campaigns-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .campaign-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .campaign-actions {
+                flex-direction: column;
+            }
+
+            .founder-profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+                padding: 40px 25px;
+            }
+
+            .founder-achievements {
                 grid-template-columns: 1fr;
             }
         }
@@ -2364,6 +2870,22 @@
 <body>
     <!-- ACCESSIBILITY: Skip to main content -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Progress Tracker -->
+    <div class="progress-tracker">
+        <div class="progress-tracker-fill" id="progressTracker"></div>
+    </div>
+
+    <!-- Floating Notification -->
+    <div class="floating-notification" id="floatingNotification">
+        <div style="display:flex;align-items:center;gap:12px">
+            <i class="fas fa-check-circle" style="color:var(--success)"></i>
+            <div>
+                <div style="font-weight:600">Welcome to Influencer Badge!</div>
+                <div style="font-size:13px;color:var(--muted)">Get verified and start earning today</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Premium Theme Toggle -->
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -2738,7 +3260,7 @@
                 <div>
                     <div style="font-size:22px;font-weight:800;background:linear-gradient(135deg, var(--accent1), var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Influencer Badge<span class="premium-badge">PREMIUM</span></div>
                     <a href="#founder" class="founder-btn">
-                        <i class="fas fa-user-tie founder-btn-icon" aria-hidden="true"></i>
+                        <img src="founder%20logo.jpeg" alt="Jatin Kishor - Founder" class="founder-btn-avatar">
                         <span class="founder-btn-name">Jatin Kishor</span>
                         <span class="founder-btn-role">Founder</span>
                     </a>
@@ -2753,11 +3275,12 @@
                 <nav role="navigation" aria-label="Main navigation">
                     <ul id="mainNav">
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#panels">Dashboard</a></li>
+                        <li><a href="#analytics">Analytics</a></li>
+                        <li><a href="#campaigns">Campaigns</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#testimonials">Success Stories</a></li>
                         <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#founder">About</a></li>
+                        <li><a href="#founder">Founder</a></li>
                     </ul>
                 </nav>
 
@@ -2862,6 +3385,57 @@
                 </aside>
             </section>
 
+            <!-- Interactive Demo Section -->
+            <section class="interactive-demo fade-in">
+                <h3 style="color:var(--accent1);margin-bottom:20px;display:flex;align-items:center;gap:12px">
+                    <i class="fas fa-play-circle"></i>
+                    Quick Platform Demo
+                </h3>
+                <p style="color:var(--muted);margin-bottom:25px">See how easy it is to get verified and start earning with Influencer Badge:</p>
+                
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:20px">
+                    <div style="text-align:center;padding:20px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s ease;cursor:pointer" 
+                         onmouseover="this.style.transform='translateY(-5px)';this.style.background='rgba(255,255,255,0.05)'" 
+                         onmouseout="this.style.transform='translateY(0)';this.style.background='rgba(255,255,255,0.03)'">
+                        <div style="width:60px;height:60px;background:linear-gradient(135deg, var(--accent1), var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:24px;color:white">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div style="font-weight:600;margin-bottom:8px">1. Sign Up</div>
+                        <div style="font-size:13px;color:var(--muted)">Create your account in 2 minutes</div>
+                    </div>
+                    
+                    <div style="text-align:center;padding:20px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s ease;cursor:pointer" 
+                         onmouseover="this.style.transform='translateY(-5px)';this.style.background='rgba(255,255,255,0.05)'" 
+                         onmouseout="this.style.transform='translateY(0)';this.style.background='rgba(255,255,255,0.03)'">
+                        <div style="width:60px;height:60px;background:linear-gradient(135deg, var(--accent1), var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:24px;color:white">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div style="font-weight:600;margin-bottom:8px">2. Get Verified</div>
+                        <div style="font-size:13px;color:var(--muted)">Complete our quick verification</div>
+                    </div>
+                    
+                    <div style="text-align:center;padding:20px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s ease;cursor:pointer" 
+                         onmouseover="this.style.transform='translateY(-5px)';this.style.background='rgba(255,255,255,0.05)'" 
+                         onmouseout="this.style.transform='translateY(0)';this.style.background='rgba(255,255,255,0.03)'">
+                        <div style="width:60px;height:60px;background:linear-gradient(135deg, var(--accent1), var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:24px;color:white">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div style="font-weight:600;margin-bottom:8px">3. Get Campaigns</div>
+                        <div style="font-size:13px;color:var(--muted)">Access premium brand campaigns</div>
+                    </div>
+                    
+                    <div style="text-align:center;padding:20px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s ease;cursor:pointer" 
+                         onmouseover="this.style.transform='translateY(-5px)';this.style.background='rgba(255,255,255,0.05)'" 
+                         onmouseout="this.style.transform='translateY(0)';this.style.background='rgba(255,255,255,0.03)'">
+                        <div style="width:60px;height:60px;background:linear-gradient(135deg, var(--accent1), var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:24px;color:white">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div style="font-weight:600;margin-bottom:8px">4. Get Paid</div>
+                        <div style="font-size:13px;color:var(--muted)">Earn money doing what you love</div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Premium Features Section -->
             <section id="features" class="fade-in" aria-labelledby="features-heading">
                 <h2 id="features-heading" style="font-size:36px;margin-top:50px;text-align:center;background:linear-gradient(135deg, var(--text-primary) 30%, var(--accent1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Premium Features</h2>
@@ -2887,6 +3461,127 @@
                         <strong style="color:var(--accent1);font-size:22px">Advanced Analytics</strong>
                         <p style="color:var(--muted);margin:15px 0 0;line-height:1.7">Comprehensive performance metrics and insights dashboard for both creators and brands to track campaign success and ROI.</p>
                     </div>
+                </div>
+            </section>
+
+            <!-- Advanced Analytics Section -->
+            <section id="analytics" class="analytics-section fade-in" style="margin: 80px 0;">
+                <h2 style="font-size:36px;margin-bottom:50px;text-align:center;background:linear-gradient(135deg, var(--text-primary) 30%, var(--accent1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+                    Advanced Analytics
+                </h2>
+                
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <div class="analytics-header">
+                            <h3 style="color:var(--accent1);margin:0">Performance Insights</h3>
+                            <div class="time-filter">
+                                <select id="timeRange">
+                                    <option value="7d">Last 7 Days</option>
+                                    <option value="30d">Last 30 Days</option>
+                                    <option value="90d">Last 90 Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-value" id="engagementRate">4.2%</div>
+                                <div class="metric-label">Engagement Rate</div>
+                                <div class="metric-change positive">+12%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value" id="reach">24.5K</div>
+                                <div class="metric-label">Reach</div>
+                                <div class="metric-change positive">+8%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value" id="conversions">156</div>
+                                <div class="metric-label">Conversions</div>
+                                <div class="metric-change positive">+23%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value" id="earnings">$2,450</div>
+                                <div class="metric-label">Earnings</div>
+                                <div class="metric-change positive">+15%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h3 style="color:var(--accent1);margin-bottom:20px">Audience Demographics</h3>
+                        <div class="demographics">
+                            <div class="demo-item">
+                                <span class="demo-label">Age 18-24</span>
+                                <div class="demo-bar">
+                                    <div class="demo-fill" style="width: 45%"></div>
+                                </div>
+                                <span class="demo-percent">45%</span>
+                            </div>
+                            <div class="demo-item">
+                                <span class="demo-label">Age 25-34</span>
+                                <div class="demo-bar">
+                                    <div class="demo-fill" style="width: 32%"></div>
+                                </div>
+                                <span class="demo-percent">32%</span>
+                            </div>
+                            <div class="demo-item">
+                                <span class="demo-label">Female</span>
+                                <div class="demo-bar">
+                                    <div class="demo-fill" style="width: 68%"></div>
+                                </div>
+                                <span class="demo-percent">68%</span>
+                            </div>
+                            <div class="demo-item">
+                                <span class="demo-label">Male</span>
+                                <div class="demo-bar">
+                                    <div class="demo-fill" style="width: 28%"></div>
+                                </div>
+                                <span class="demo-percent">28%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Smart Campaign Discovery -->
+            <section id="campaigns" class="campaigns-section fade-in" style="margin: 80px 0;">
+                <h2 style="font-size:36px;margin-bottom:50px;text-align:center;background:linear-gradient(135deg, var(--text-primary) 30%, var(--accent1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+                    Smart Campaign Discovery
+                </h2>
+                
+                <div class="campaign-filters">
+                    <div class="filter-group">
+                        <label>Category:</label>
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="beauty">Beauty</option>
+                            <option value="fitness">Fitness</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="travel">Travel</option>
+                            <option value="tech">Tech</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Budget:</label>
+                        <select id="budgetFilter">
+                            <option value="all">Any Budget</option>
+                            <option value="0-1000">$0 - $1,000</option>
+                            <option value="1000-5000">$1,000 - $5,000</option>
+                            <option value="5000+">$5,000+</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Match Score:</label>
+                        <select id="matchFilter">
+                            <option value="all">All Matches</option>
+                            <option value="90+">90%+ Match</option>
+                            <option value="80+">80%+ Match</option>
+                            <option value="70+">70%+ Match</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="campaigns-grid" id="campaignsGrid">
+                    <!-- Campaign cards will be populated by JavaScript -->
                 </div>
             </section>
 
@@ -3009,29 +3704,79 @@
                 </form>
             </section>
 
+            <!-- Enhanced Founder Section -->
+            <section id="founder" class="founder-profile fade-in">
+                <div class="founder-image-container">
+                    <img src="founder%20logo.jpeg" alt="Jatin Kishor - Founder of Influencer Badge" class="founder-image">
+                    <div style="margin-top:20px">
+                        <h3 style="color:var(--accent1);margin:0">Jatin Kishor</h3>
+                        <p style="color:var(--muted);margin:5px 0 0">Visionary Entrepreneur & Tech Innovator</p>
+                    </div>
+                </div>
+                
+                <div class="founder-bio">
+                    <h3>Meet The Visionary Behind Influencer Badge</h3>
+                    <div class="founder-role">Founder & CEO</div>
+                    <p class="founder-story">
+                        Jatin Kishor is a passionate entrepreneur with a vision to revolutionize the influencer marketing industry. 
+                        With over 5 years of experience in digital marketing and technology, he identified the critical gap between 
+                        authentic creators and premium brands seeking genuine partnerships.
+                        <br><br>
+                        His journey began while managing social media campaigns for major brands, where he witnessed firsthand 
+                        the challenges both creators and brands face in finding the right partnerships. This inspired him to create 
+                        Influencer Badge - a platform that brings transparency, trust, and technology to influencer marketing.
+                        <br><br>
+                        Under Jatin's leadership, Influencer Badge has grown to become a trusted platform connecting 15,000+ 
+                        verified creators with premium brands, facilitating authentic collaborations that drive real results.
+                    </p>
+                    
+                    <div class="founder-achievements">
+                        <div class="achievement">
+                            <div class="achievement-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>15K+ Creators</h4>
+                                <p>Verified on platform</p>
+                            </div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>$2M+ Paid</h4>
+                                <p>To creators in 2024</p>
+                            </div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Industry Leader</h4>
+                                <p>In influencer verification</p>
+                            </div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>750+ Brands</h4>
+                                <p>Trust our platform</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Premium Developer Notes -->
             <section class="dev-notes fade-in">
                 <h3 style="font-size:24px;color:var(--accent1);margin-top:0">Developer Notes</h3>
                 <p style="color:var(--muted);line-height:1.7;margin:0">
                     This premium template is fully responsive and includes all features. The registration form integrates with Google Apps Script for data collection. For full backend functionality, connect to Firebase or a custom Node.js backend.
                 </p>
-            </section>
-
-            <!-- Premium Founder Section -->
-            <section id="founder" class="founder-section-main fade-in" aria-labelledby="founder-heading">
-                <div class="founder-avatar">
-                    <i class="fas fa-user-tie" aria-hidden="true"></i>
-                </div>
-                <h3 id="founder-heading" style="color:var(--accent1);font-size:28px;margin-bottom:15px">Jatin Kishor</h3>
-                <div style="color:var(--muted);font-size:18px;margin-bottom:20px">Founder & CEO</div>
-                <p class="founder-quote">
-                    "Our mission is to create authentic partnerships between creators and brands that drive real results. 
-                    We believe in transparency, quality, and building lasting relationships in the influencer marketing space."
-                </p>
-                <a href="#" class="founder-btn" style="background:rgba(255,255,255,0.08);padding:12px 25px">
-                    <i class="fas fa-rocket founder-btn-icon" aria-hidden="true"></i>
-                    <span>Building the future of influencer marketing since 2023</span>
-                </a>
             </section>
         </div>
     </main>
@@ -3101,6 +3846,186 @@
             }
         ];
 
+        // ========== NEW FEATURES DATA ========== //
+        const CAMPAIGN_MANAGER = {
+            campaigns: [
+                {
+                    id: 1,
+                    title: "Luxe Beauty Serum Launch",
+                    brand: "Glamour Cosmetics",
+                    category: "beauty",
+                    budget: "$2,000-$5,000",
+                    requirements: "10K+ followers, beauty niche",
+                    duration: "2 weeks",
+                    matchScore: 95,
+                    status: "active"
+                },
+                {
+                    id: 2,
+                    title: "Fitness App Integration",
+                    brand: "FitLife Pro",
+                    category: "fitness",
+                    budget: "$1,500-$3,000",
+                    requirements: "5K+ followers, fitness content",
+                    duration: "1 month",
+                    matchScore: 88,
+                    status: "active"
+                },
+                {
+                    id: 3,
+                    title: "Travel Vlog Series",
+                    brand: "Wanderlust Adventures",
+                    category: "travel",
+                    budget: "$3,000-$7,000",
+                    requirements: "20K+ followers, travel content",
+                    duration: "6 weeks",
+                    matchScore: 76,
+                    status: "active"
+                },
+                {
+                    id: 4,
+                    title: "Tech Gadget Review",
+                    brand: "TechInnovate",
+                    category: "tech",
+                    budget: "$1,000-$2,500",
+                    requirements: "8K+ followers, tech content",
+                    duration: "1 week",
+                    matchScore: 82,
+                    status: "active"
+                }
+            ],
+
+            renderCampaigns: function(filteredCampaigns = this.campaigns) {
+                const grid = document.getElementById('campaignsGrid');
+                if (!grid) return;
+
+                grid.innerHTML = filteredCampaigns.map(campaign => `
+                    <div class="campaign-card" data-category="${campaign.category}" data-match="${campaign.matchScore}">
+                        <div class="campaign-header">
+                            <h3 class="campaign-title">${campaign.title}</h3>
+                            <div class="match-badge">${campaign.matchScore}% Match</div>
+                        </div>
+                        <span class="campaign-brand">${campaign.brand}</span>
+                        
+                        <div class="campaign-details">
+                            <div class="campaign-detail">
+                                <span class="detail-label">Budget</span>
+                                <span class="detail-value">${campaign.budget}</span>
+                            </div>
+                            <div class="campaign-detail">
+                                <span class="detail-label">Duration</span>
+                                <span class="detail-value">${campaign.duration}</span>
+                            </div>
+                            <div class="campaign-detail">
+                                <span class="detail-label">Category</span>
+                                <span class="detail-value" style="text-transform:capitalize">${campaign.category}</span>
+                            </div>
+                            <div class="campaign-detail">
+                                <span class="detail-label">Requirements</span>
+                                <span class="detail-value">${campaign.requirements}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="campaign-actions">
+                            <button class="btn" style="background:var(--accent1);color:#000;flex:1" onclick="applyToCampaign(${campaign.id})">
+                                <i class="fas fa-rocket"></i> Apply Now
+                            </button>
+                            <button class="btn btn-secondary" onclick="viewCampaignDetails(${campaign.id})">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            },
+
+            filterCampaigns: function() {
+                const category = document.getElementById('categoryFilter').value;
+                const budget = document.getElementById('budgetFilter').value;
+                const match = document.getElementById('matchFilter').value;
+
+                let filtered = this.campaigns;
+
+                if (category !== 'all') {
+                    filtered = filtered.filter(campaign => campaign.category === category);
+                }
+
+                if (match !== 'all') {
+                    const minMatch = parseInt(match);
+                    filtered = filtered.filter(campaign => campaign.matchScore >= minMatch);
+                }
+
+                this.renderCampaigns(filtered);
+            }
+        };
+
+        // AI Recommendation Engine
+        const AI_RECOMMENDATION_ENGINE = {
+            getRecommendedCampaigns: function(userData) {
+                return CAMPAIGN_MANAGER.campaigns.filter(campaign => 
+                    campaign.category === userData.category || 
+                    campaign.matchScore > 70
+                ).sort((a, b) => b.matchScore - a.matchScore);
+            },
+
+            predictPerformance: function(creator, campaign) {
+                const baseEngagement = creator.engagementRate || 2.5;
+                const audienceMatch = campaign.matchScore / 100;
+                const estimatedReach = creator.followers * 0.15;
+                
+                return {
+                    estimatedReach: Math.round(estimatedReach),
+                    expectedEngagement: (baseEngagement * audienceMatch).toFixed(1),
+                    potentialEarnings: (campaign.budget.split('-')[0].replace('$', '') * 1.2),
+                    confidenceScore: campaign.matchScore
+                };
+            }
+        };
+
+        // UX Improvements
+        function showFloatingNotification(message, type = 'info') {
+            const notification = document.getElementById('floatingNotification');
+            const icon = notification.querySelector('i');
+            const title = notification.querySelector('div > div:first-child');
+            const subtitle = notification.querySelector('div > div:last-child');
+            
+            // Set notification content
+            title.textContent = message.title || 'Notification';
+            subtitle.textContent = message.subtitle || '';
+            
+            // Set icon based on type
+            if (type === 'success') {
+                icon.className = 'fas fa-check-circle';
+                icon.style.color = 'var(--success)';
+            } else if (type === 'error') {
+                icon.className = 'fas fa-exclamation-circle';
+                icon.style.color = 'var(--error)';
+            } else {
+                icon.className = 'fas fa-info-circle';
+                icon.style.color = 'var(--accent1)';
+            }
+            
+            // Show notification
+            notification.classList.add('show');
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
+        }
+
+        function initProgressTracker() {
+            const progressBar = document.getElementById('progressTracker');
+            window.addEventListener('scroll', () => {
+                const winHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset;
+                const trackLength = docHeight - winHeight;
+                const progress = Math.floor(scrollTop / trackLength * 100);
+                
+                progressBar.style.width = progress + '%';
+            });
+        }
+
         // Performance optimizations
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
@@ -3110,6 +4035,15 @@
                 initAnimations();
                 initCountingNumbers();
                 initFAQ();
+                initProgressTracker();
+                
+                // Show welcome notification
+                setTimeout(() => {
+                    showFloatingNotification({
+                        title: 'Welcome to Influencer Badge!',
+                        subtitle: 'Get verified and start earning today'
+                    }, 'success');
+                }, 1000);
                 
                 // Preload critical images
                 const criticalImages = document.querySelectorAll('img[loading="lazy"]');
@@ -3136,6 +4070,11 @@
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
+            
+            showFloatingNotification({
+                title: `Switched to ${newTheme} mode`,
+                subtitle: 'Enjoy your preferred viewing experience'
+            }, 'info');
         });
 
         function updateThemeIcon(theme) {
@@ -3203,6 +4142,10 @@
             'bye': {
                 text: 'Thank you for chatting! Feel free to reach out anytime. Have a great day! 🌟',
                 quickReplies: ['New conversation', 'Verification process', 'Brand campaigns', 'Payment info']
+            },
+            'campaigns': {
+                text: 'Here are some campaign recommendations based on your profile:\n\n1. Luxe Beauty Serum Launch - 95% match\n2. Fitness App Integration - 88% match\n3. Travel Vlog Series - 76% match\n\nWould you like to apply to any of these?',
+                quickReplies: ['Apply to Beauty Campaign', 'View All Campaigns', 'Campaign Requirements', 'Back to main menu']
             }
         };
 
@@ -3445,12 +4388,67 @@
             submitBtn.disabled = true;
             
             setTimeout(() => {
-                alert('🎉 Thank you for subscribing to our premium updates!');
+                showFloatingNotification({
+                    title: 'Successfully Subscribed!',
+                    subtitle: 'You will receive our premium updates'
+                }, 'success');
                 newsletterForm.reset();
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }, 1500);
         });
+
+        // Analytics functions
+        function initializeAnalytics() {
+            // Simulate real-time data updates
+            setInterval(() => {
+                const metrics = ['engagementRate', 'reach', 'conversions', 'earnings'];
+                metrics.forEach(metric => {
+                    const element = document.getElementById(metric);
+                    if (element) {
+                        const current = parseFloat(element.textContent.replace(/[^\d.]/g, ''));
+                        const change = (Math.random() - 0.3) * 0.1; // Small random change
+                        const newValue = current * (1 + change);
+                        
+                        if (metric === 'engagementRate') {
+                            element.textContent = newValue.toFixed(1) + '%';
+                        } else if (metric === 'earnings') {
+                            element.textContent = '$' + Math.round(newValue).toLocaleString();
+                        } else {
+                            element.textContent = Math.round(newValue).toLocaleString();
+                        }
+                    }
+                });
+            }, 5000);
+        }
+
+        // Campaign application function
+        function applyToCampaign(campaignId) {
+            const campaign = CAMPAIGN_MANAGER.campaigns.find(c => c.id === campaignId);
+            if (campaign) {
+                // Show registration modal for new users, or direct application for logged-in users
+                const modal = document.getElementById('registrationModal');
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Store campaign info for later reference
+                    localStorage.setItem('pendingCampaign', JSON.stringify(campaign));
+                    
+                    showFloatingNotification({
+                        title: 'Ready to Apply!',
+                        subtitle: 'Complete your profile to access this campaign'
+                    }, 'info');
+                }
+            }
+        }
+
+        function viewCampaignDetails(campaignId) {
+            const campaign = CAMPAIGN_MANAGER.campaigns.find(c => c.id === campaignId);
+            if (campaign) {
+                alert(`Campaign Details:\n\nTitle: ${campaign.title}\nBrand: ${campaign.brand}\nBudget: ${campaign.budget}\nDuration: ${campaign.duration}\nRequirements: ${campaign.requirements}\nMatch Score: ${campaign.matchScore}%`);
+            }
+        }
 
         // Mobile Menu
         document.addEventListener('DOMContentLoaded', function() {
@@ -3558,18 +4556,43 @@
                         form.style.display = 'none';
                         successScreen.classList.add('active');
                         console.log('✅ Application saved to database!');
+                        
+                        showFloatingNotification({
+                            title: 'Application Submitted!',
+                            subtitle: 'Our team will review it shortly'
+                        }, 'success');
                     } else {
                         throw new Error(result.message);
                     }
                     
                 } catch (error) {
                     console.error('Error:', error);
-                    alert('Error submitting application. Please try again.');
+                    showFloatingNotification({
+                        title: 'Submission Error',
+                        subtitle: 'Please try again or use Google Form'
+                    }, 'error');
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 }
             });
 
+            // Initialize new features when DOM is loaded
+            // Initialize campaign discovery
+            if (document.getElementById('campaignsGrid')) {
+                CAMPAIGN_MANAGER.renderCampaigns();
+                
+                // Add event listeners to filters
+                ['categoryFilter', 'budgetFilter', 'matchFilter'].forEach(filterId => {
+                    const filter = document.getElementById(filterId);
+                    if (filter) {
+                        filter.addEventListener('change', () => CAMPAIGN_MANAGER.filterCampaigns());
+                    }
+                });
+            }
+            
+            // Initialize analytics
+            initializeAnalytics();
+            
             // Lazy loading
             if ('IntersectionObserver' in window) {
                 const lazyImageObserver = new IntersectionObserver((entries) => {
@@ -3625,8 +4648,16 @@
                         loadRealApplications(); // Load REAL data
                         loadAdminAnalytics();
                         
+                        showFloatingNotification({
+                            title: 'Admin Access Granted',
+                            subtitle: 'Welcome to the dashboard'
+                        }, 'success');
+                        
                     } else {
-                        alert('❌ Invalid admin credentials! Access denied.');
+                        showFloatingNotification({
+                            title: 'Access Denied',
+                            subtitle: 'Invalid admin credentials'
+                        }, 'error');
                     }
                 });
             }
@@ -3702,7 +4733,10 @@
                 const app = DEMO_APPLICATIONS.find(a => a.email === email);
                 if (app) {
                     app.status = 'Approved';
-                    alert('🎉 Application approved!');
+                    showFloatingNotification({
+                        title: 'Application Approved!',
+                        subtitle: `${name} is now verified`
+                    }, 'success');
                     loadRealApplications();
                     loadAdminAnalytics();
                 }
@@ -3715,7 +4749,10 @@
                 const app = DEMO_APPLICATIONS.find(a => a.email === email);
                 if (app) {
                     app.status = 'Rejected';
-                    alert('Application rejected.');
+                    showFloatingNotification({
+                        title: 'Application Rejected',
+                        subtitle: `${name} has been declined`
+                    }, 'error');
                     loadRealApplications();
                     loadAdminAnalytics();
                 }
@@ -3741,7 +4778,11 @@
         }
 
         function exportData() {
-            alert('📥 Exporting database to CSV...\n\nThis would download all applications in real implementation.');
+            showFloatingNotification({
+                title: 'Exporting Data',
+                subtitle: 'Download will start shortly'
+            }, 'info');
+            // In real implementation, this would trigger a download
         }
 
         function clearAllData() {
@@ -3749,7 +4790,10 @@
                 DEMO_APPLICATIONS.forEach(app => {
                     app.status = 'Pending';
                 });
-                alert('🗑️ Demo data has been reset!');
+                showFloatingNotification({
+                    title: 'Data Reset',
+                    subtitle: 'Demo data has been cleared'
+                }, 'info');
                 loadRealApplications();
             }
         }
