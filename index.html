@@ -1,4 +1,4 @@
-first    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,14 +44,6 @@ first    <!DOCTYPE html>
             --neon-green: #00ff9d;
             color-scheme: dark; 
             font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-        }
-        
-        [data-theme="light"] {
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --muted: #6b7280;
-            --text-primary: #1f2937;
-            --text-secondary: #4b5563;
         }
         
         * {
@@ -235,34 +227,6 @@ first    <!DOCTYPE html>
             padding: 18px;
         }
 
-        /* Advanced Theme Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            z-index: 1000;
-            background: linear-gradient(135deg, var(--accent1), var(--accent2));
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            animation: glow 3s ease-in-out infinite, float 4s ease-in-out infinite;
-            font-size: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.2) rotate(180deg);
-            animation: none;
-            box-shadow: 0 0 30px rgba(212,161,106,0.8);
-        }
-
         /* Advanced Loader */
         #loader {
             position: fixed;
@@ -328,11 +292,6 @@ first    <!DOCTYPE html>
             top: 0;
             z-index: 40;
             transition: all 0.3s ease;
-        }
-
-        [data-theme="light"] header {
-            background: rgba(248, 250, 252, 0.85);
-            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
 
         .nav {
@@ -551,11 +510,6 @@ first    <!DOCTYPE html>
             left: 100%;
         }
 
-        [data-theme="light"] .card {
-            background: linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
         .card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 30px 60px rgba(0,0,0,0.5);
@@ -625,10 +579,6 @@ first    <!DOCTYPE html>
             backdrop-filter: blur(10px);
         }
 
-        [data-theme="light"] .btn-secondary {
-            border: 2px solid rgba(0,0,0,0.15);
-        }
-
         .btn-secondary:hover,
         .btn-secondary:focus {
             background: rgba(255,255,255,0.08);
@@ -664,10 +614,6 @@ first    <!DOCTYPE html>
             right: 0;
             height: 4px;
             background: linear-gradient(90deg, var(--accent1), var(--accent2));
-        }
-
-        [data-theme="light"] .feature {
-            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .feature:hover {
@@ -750,10 +696,6 @@ first    <!DOCTYPE html>
             font-size: 18px;
         }
 
-        [data-theme="light"] .social a {
-            background: rgba(0,0,0,0.05);
-        }
-
         .social a:hover,
         .social a:focus {
             background: var(--accent1);
@@ -782,10 +724,6 @@ first    <!DOCTYPE html>
             height: 4px;
             background: linear-gradient(90deg, var(--accent1), var(--accent2));
             border-radius: 2px;
-        }
-
-        [data-theme="light"] footer {
-            border-top: 1px solid rgba(0,0,0,0.1);
         }
 
         .footer-logo {
@@ -999,10 +937,6 @@ first    <!DOCTYPE html>
             transition: all 0.3s ease;
         }
 
-        [data-theme="light"] .faq-item {
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
         .faq-item:hover {
             border-color: rgba(212,161,106,0.3);
             transform: translateY(-2px);
@@ -1088,10 +1022,6 @@ first    <!DOCTYPE html>
             font-family: serif;
         }
 
-        [data-theme="light"] .testimonial-card {
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
         .testimonial-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 25px 50px rgba(0,0,0,0.4);
@@ -1157,10 +1087,6 @@ first    <!DOCTYPE html>
             text-align: center;
             position: relative;
             transition: all 0.4s ease;
-        }
-
-        [data-theme="light"] .step-card {
-            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .step-card:hover {
@@ -3279,8 +3205,8 @@ first    <!DOCTYPE html>
         }
 
         .success-avatar {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             margin: 0 auto 20px;
             border: 4px solid rgba(255,255,255,0.1);
@@ -4126,10 +4052,6 @@ first    <!DOCTYPE html>
                 border-top: 1px solid rgba(255,255,255,0.1);
                 box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             }
-
-            [data-theme="light"] nav ul {
-                background: rgba(248, 250, 252, 0.95);
-            }
             
             nav ul.active {
                 display: flex;
@@ -4174,11 +4096,6 @@ first    <!DOCTYPE html>
                 flex-direction: column;
                 text-align: center;
                 gap: 25px;
-            }
-
-            .theme-toggle {
-                top: 80px;
-                right: 15px;
             }
 
             .chat-window {
@@ -4453,12 +4370,6 @@ first    <!DOCTYPE html>
                 flex-direction: column;
             }
 
-            .theme-toggle {
-                width: 55px;
-                height: 55px;
-                font-size: 18px;
-            }
-
             .admin-access-btn .btn {
                 padding: 12px 20px;
                 min-height: 50px;
@@ -4576,11 +4487,6 @@ first    <!DOCTYPE html>
             </div>
         </div>
     </div>
-
-    <!-- Advanced Theme Toggle -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fas fa-moon"></i>
-    </button>
 
     <!-- Advanced Chat Widget -->
     <div class="chat-widget">
@@ -5442,242 +5348,258 @@ first    <!DOCTYPE html>
                 <h2 style="font-size:36px;margin-bottom:50px;text-align:center;background:linear-gradient(135deg, var(--text-primary) 30%, var(--accent1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Success Stories</h2>
                 
                 <div class="success-stories-grid">
+                    <!-- Creator 1 -->
                     <div class="success-story card-3d">
-                        <div class="success-avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face')"></div>
-                        <h3 class="success-name">Priya Sharma</h3>
-                        <div class="success-role">Lifestyle Creator</div>
+                        <img src="vaishnavi pandey.jpeg" alt="Vaishnavi Pandey - Success Story" class="success-avatar">
+                        <h3 class="success-name">Vaishnavi Pandey</h3>
+                        <div class="success-role">Beauty Content Creator</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Lucknow, Uttar Pradesh</div>
                         <div class="success-metrics">
                             <div class="success-metric">
-                                <span class="success-metric-value">250K</span>
-                                <span class="success-metric-label">Followers</span>
+                                <span class="success-metric-value">15+</span>
+                                <span class="success-metric-label">Beauty Brands</span>
                             </div>
                             <div class="success-metric">
-                                <span class="success-metric-value">$75K</span>
-                                <span class="success-metric-label">Earnings</span>
+                                <span class="success-metric-value">94%</span>
+                                <span class="success-metric-label">Engagement</span>
                             </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">4.9★</span>
+                                <span class="success-metric-label">Brand Rating</span>
+                            </div>
+                        </div>
+                        <p class="success-quote">
+                            "My authentic beauty tutorials through Influencer Badge got me 15+ premium beauty brand collaborations!"
+                        </p>
+                    </div>
+
+                    <!-- Creator 2 -->
+                    <div class="success-story card-3d">
+                        <img src="vaishnabi parida.jpg" alt="Vaishnabi Parida - Success Story" class="success-avatar">
+                        <h3 class="success-name">Vaishnabi Parida</h3>
+                        <div class="success-role">Makeup Artist</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Cuttack, Odisha</div>
+                        <div class="success-metrics">
+                            <div class="success-metric">
+                                <span class="success-metric-value">12</span>
+                                <span class="success-metric-label">Luxury Brands</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">88%</span>
+                                <span class="success-metric-label">Content Quality</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">3.1x</span>
+                                <span class="success-metric-label">Brand ROI</span>
+                            </div>
+                        </div>
+                        <p class="success-quote">
+                            "As a professional makeup artist, I proved that skill matters more than followers!"
+                        </p>
+                    </div>
+
+                    <!-- Creator 3 -->
+                    <div class="success-story card-3d">
+                        <img src="muskan.jpeg" alt="Muskan  - Success Story" class="success-avatar">
+                        <h3 class="success-name">Muskan</h3>
+                        <div class="success-role">Skincare Specialist</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Kolkata, West Bengal</div>
+                        <div class="success-metrics">
+                            <div class="success-metric">
+                                <span class="success-metric-value">8</span>
+                                <span class="success-metric-label">Skincare Brands</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">96%</span>
+                                <span class="success-metric-label">Authenticity Score</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">4.8★</span>
+                                <span class="success-metric-label">Reviews</span>
+                            </div>
+                        </div>
+                        <p class="success-quote">
+                            "My honest skincare routines attracted premium brands who value genuine recommendations!"
+                        </p>
+                    </div>
+
+                    <!-- Creator 4 -->
+                    <div class="success-story card-3d">
+                        <img src="aakriti gupta.jpeg" alt="Aakriti Gupta - Success Story" class="success-avatar">
+                        <h3 class="success-name">Aakriti Gupta</h3>
+                        <div class="success-role">Content Creator</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Puranpur, Uttar Pradesh</div>
+                        <div class="success-metrics">
                             <div class="success-metric">
                                 <span class="success-metric-value">25+</span>
-                                <span class="success-metric-label">Brands</span>
+                                <span class="success-metric-label">Projects</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">98%</span>
+                                <span class="success-metric-label">Client Satisfaction</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">2.8x</span>
+                                <span class="success-metric-label">Conversion Rate</span>
                             </div>
                         </div>
                         <p class="success-quote">
-                            "Influencer Badge transformed my content creation journey. From 10K to 250K followers with premium brand partnerships that align with my values."
+                            "Creating authentic content helped me work with 25+ brands!"
                         </p>
                     </div>
 
+                    <!-- Creator 5 -->
                     <div class="success-story card-3d">
-                        <div class="success-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face')"></div>
-                        <h3 class="success-name">Alex Thompson</h3>
-                        <div class="success-role">Tech Reviewer</div>
+                        <img src="riya seth.jpeg" alt="Riya Seth - Success Story" class="success-avatar">
+                        <h3 class="success-name">Riya Seth</h3>
+                        <div class="success-role">Lifestyle & Beauty Creator</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Hyderabad, Telangana</div>
                         <div class="success-metrics">
                             <div class="success-metric">
-                                <span class="success-metric-value">180K</span>
-                                <span class="success-metric-label">Subscribers</span>
+                                <span class="success-metric-value">18</span>
+                                <span class="success-metric-label">Lifestyle Brands</span>
                             </div>
                             <div class="success-metric">
-                                <span class="success-metric-value">$120K</span>
-                                <span class="success-metric-label">Earnings</span>
+                                <span class="success-metric-value">92%</span>
+                                <span class="success-metric-label">Engagement Rate</span>
                             </div>
                             <div class="success-metric">
-                                <span class="success-metric-value">18+</span>
-                                <span class="success-metric-label">Brands</span>
+                                <span class="success-metric-value">4.7★</span>
+                                <span class="success-metric-label">Brand Rating</span>
                             </div>
                         </div>
                         <p class="success-quote">
-                            "The AI matching system connected me with perfect tech brands. My channel growth and earnings have never been better!"
+                            "Sharing my daily lifestyle attracted brands who value authentic storytelling!"
                         </p>
                     </div>
 
+                    <!-- Creator 6 -->
                     <div class="success-story card-3d">
-                        <div class="success-avatar" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face')"></div>
-                        <h3 class="success-name">Maria Rodriguez</h3>
-                        <div class="success-role">Fitness Coach</div>
+                        <img src="mithu biswas.jpeg" alt="Mithu Biswas - Success Story" class="success-avatar">
+                        <h3 class="success-name">Mithu Biswas</h3>
+                        <div class="success-role">Beauty & Makeup Expert</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Indore, Madhya Pradesh</div>
                         <div class="success-metrics">
                             <div class="success-metric">
-                                <span class="success-metric-value">350K</span>
-                                <span class="success-metric-label">Followers</span>
+                                <span class="success-metric-value">20+</span>
+                                <span class="success-metric-label">Campaigns</span>
                             </div>
                             <div class="success-metric">
-                                <span class="success-metric-value">$200K</span>
-                                <span class="success-metric-label">Earnings</span>
+                                <span class="success-metric-value">95%</span>
+                                <span class="success-metric-label">Content Quality</span>
                             </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">3.5x</span>
+                                <span class="success-metric-label">ROI Delivered</span>
+                            </div>
+                        </div>
+                        <p class="success-quote">
+                            "My detailed makeup tutorials helped brands reach their target audience effectively!"
+                        </p>
+                    </div>
+
+                    <!-- Creator 7 -->
+                    <div class="success-story card-3d">
+                        <img src="Ankita Gogoi.jpeg" alt="Ankita Gogoi - Success Story" class="success-avatar">
+                        <h3 class="success-name">Ankita Gogoi</h3>
+                        <div class="success-role">Skincare & Fashion Creator</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Jorhat, Assam</div>
+                        <div class="success-metrics">
+                            <div class="success-metric">
+                                <span class="success-metric-value">15</span>
+                                <span class="success-metric-label">Skincare and Fashion Brands</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">90%</span>
+                                <span class="success-metric-label">Authenticity</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">4.9★</span>
+                                <span class="success-metric-label">Client Reviews</span>
+                            </div>
+                        </div>
+                        <p class="success-quote">
+                            "Creating genuine skincare and Fashion content helped me build long-term relationships with brands!"
+                        </p>
+                    </div>
+
+                    <!-- Creator 8 -->
+                    <div class="success-story card-3d">
+                        <img src="bithi biswas.jpeg" alt="Bithi Biswas - Success Story" class="success-avatar">
+                        <h3 class="success-name">Bithi Biswas</h3>
+                        <div class="success-role">Lifestyle, Fashion & Beauty Creator</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Kolkata, West Bengal</div>
+                        <div class="success-metrics">
+                            <div class="success-metric">
+                                <span class="success-metric-value">22</span>
+                                <span class="success-metric-label">Brand Collabs</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">97%</span>
+                                <span class="success-metric-label">Satisfaction</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">2.9x</span>
+                                <span class="success-metric-label">Conversion</span>
+                            </div>
+                        </div>
+                        <p class="success-quote">
+                            "My authentic lifestyle, beauty and fashion content with beauty integrations delivered real results for brands!"
+                        </p>
+                    </div>
+
+                    <!-- Creator 9 -->
+                    <div class="success-story card-3d">
+                        <img src="suhani chauhan.jpeg" alt="Suhani Chauhan - Success Story" class="success-avatar">
+                        <h3 class="success-name">Suhani Chauhan</h3>
+                        <div class="success-role">Makeup & Fashion Specialist</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Haridwar, Uttrakhand</div>
+                        <div class="success-metrics">
                             <div class="success-metric">
                                 <span class="success-metric-value">30+</span>
-                                <span class="success-metric-label">Brands</span>
+                                <span class="success-metric-label">Makeup Projects</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">91%</span>
+                                <span class="success-metric-label">Quality Score</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">3.2x</span>
+                                <span class="success-metric-label">ROI Generated</span>
                             </div>
                         </div>
                         <p class="success-quote">
-                            "As a fitness creator, finding authentic brand partnerships was challenging. Influencer Badge made it seamless and profitable."
+                            "My makeup and fashion content became the go-to choice for brands seeking authentic product demonstrations!"
+                        </p>
+                    </div>
+
+                    <!-- Creator 10 -->
+                    <div class="success-story card-3d">
+                        <img src="Komal.jpeg" alt="Komal Sharma - Success Story" class="success-avatar">
+                        <h3 class="success-name">Komal Sharma</h3>
+                        <div class="success-role">Beauty & Lifestyle Creator</div>
+                        <div style="color: var(--accent2); font-size: 14px; margin-bottom: 15px;">📍 Jaipur, Rajasthan</div>
+                        <div class="success-metrics">
+                            <div class="success-metric">
+                                <span class="success-metric-value">16</span>
+                                <span class="success-metric-label">Brand Partners</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">93%</span>
+                                <span class="success-metric-label">Engagement</span>
+                            </div>
+                            <div class="success-metric">
+                                <span class="success-metric-value">4.6★</span>
+                                <span class="success-metric-label">Rating</span>
+                            </div>
+                        </div>
+                        <p class="success-quote">
+                            "From local beauty influencer to working with national brands - all thanks to Influencer Badge platform!"
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- ========== MOBILE APP PREVIEW SECTION ========== -->
-            <section id="mobile-app" class="mobile-app-section fade-in">
-                <h2 style="font-size:36px;margin-bottom:50px;text-align:center;background:linear-gradient(135deg, var(--text-primary) 30%, var(--accent1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Mobile App</h2>
-                
-                <div class="mobile-app-content">
-                    <div class="mobile-app-screens">
-                        <div class="mobile-screen">
-                            <img src="mobile%20app%201%20.jpeg" alt="Mobile App Screen 1">
-                        </div>
-                        <div class="mobile-screen">
-                            <img src="mobile%20app%202.jpeg" alt="Mobile App Screen 2">
-                        </div>
-                    </div>
-                    
-                    <div class="mobile-app-features">
-                        <div class="mobile-feature">
-                            <div class="mobile-feature-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <div class="mobile-feature-content">
-                                <h4>Real-time Notifications</h4>
-                                <p>Get instant alerts for new campaign opportunities, messages, and payment updates.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="mobile-feature">
-                            <div class="mobile-feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="mobile-feature-content">
-                                <h4>Performance Analytics</h4>
-                                <p>Track your campaign performance and audience growth on the go with detailed analytics.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="mobile-feature">
-                            <div class="mobile-feature-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <div class="mobile-feature-content">
-                                <h4>Direct Messaging</h4>
-                                <p>Communicate directly with brands and our support team through the integrated chat system.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="mobile-feature">
-                            <div class="mobile-feature-icon">
-                                <i class="fas fa-money-bill-wave"></i>
-                            </div>
-                            <div class="mobile-feature-content">
-                                <h4>Payment Tracking</h4>
-                                <p>Monitor your earnings, track payments, and manage your financial dashboard from anywhere.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ========== API DOCUMENTATION SECTION ========== -->
-            <section id="api" class="api-section fade-in">
-                <h2 style="font-size:36px;margin-bottom:50px;text-align:center;background:linear-gradient(135deg, var(--text-primary) 30%, var(--accent1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">API Documentation</h2>
-                
-                <div class="api-endpoints">
-                    <div class="api-endpoint">
-                        <div>
-                            <span class="endpoint-method method-get">GET</span>
-                            <span class="endpoint-path">/api/v1/campaigns</span>
-                        </div>
-                        <p class="endpoint-description">Retrieve a list of available campaigns with filtering and pagination options.</p>
-                        <div class="endpoint-parameters">
-                            <div class="parameter">
-                                <span class="parameter-name">category</span>
-                                <span class="parameter-type">string (optional)</span>
-                            </div>
-                            <div class="parameter">
-                                <span class="parameter-name">page</span>
-                                <span class="parameter-type">integer (optional)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="api-endpoint">
-                        <div>
-                            <span class="endpoint-method method-post">POST</span>
-                            <span class="endpoint-path">/api/v1/applications</span>
-                        </div>
-                        <p class="endpoint-description">Submit a new application for a campaign. Requires authentication.</p>
-                        <div class="endpoint-parameters">
-                            <div class="parameter">
-                                <span class="parameter-name">campaign_id</span>
-                                <span class="parameter-type">string (required)</span>
-                            </div>
-                            <div class="parameter">
-                                <span class="parameter-name">proposal</span>
-                                <span class="parameter-type">string (required)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="api-endpoint">
-                        <div>
-                            <span class="endpoint-method method-get">GET</span>
-                            <span class="endpoint-path">/api/v1/analytics/performance</span>
-                        </div>
-                        <p class="endpoint-description">Retrieve performance analytics for campaigns and creator metrics.</p>
-                        <div class="endpoint-parameters">
-                            <div class="parameter">
-                                <span class="parameter-name">timeframe</span>
-                                <span class="parameter-type">string (optional)</span>
-                            </div>
-                            <div class="parameter">
-                                <span class="parameter-name">metrics</span>
-                                <span class="parameter-type">array (optional)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ========== AFFILIATE PROGRAM SECTION ========== -->
-            <section id="affiliate" class="affiliate-section fade-in">
-                <h2 style="color:white;font-size:36px;margin-bottom:20px">Affiliate Program</h2>
-                <p style="color:rgba(255,255,255,0.9);font-size:1.2rem;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto">
-                    Earn commissions by referring creators and brands to our platform. Join our affiliate program and start earning today.
-                </p>
-                
-                <div class="affiliate-stats">
-                    <div class="affiliate-stat">
-                        <div class="affiliate-stat-number">25%</div>
-                        <div class="affiliate-stat-label">Commission Rate</div>
-                    </div>
-                    <div class="affiliate-stat">
-                        <div class="affiliate-stat-number">$500K+</div>
-                        <div class="affiliate-stat-label">Paid to Affiliates</div>
-                    </div>
-                    <div class="affiliate-stat">
-                        <div class="affiliate-stat-number">2,000+</div>
-                        <div class="affiliate-stat-label">Active Affiliates</div>
-                    </div>
-                </div>
-
-                <div class="affiliate-features">
-                    <div class="affiliate-feature">
-                        <h4><i class="fas fa-chart-line"></i> Real-time Tracking</h4>
-                        <p>Monitor your referrals, commissions, and performance with our comprehensive dashboard.</p>
-                    </div>
-                    <div class="affiliate-feature">
-                        <h4><i class="fas fa-gift"></i> Exclusive Bonuses</h4>
-                        <p>Earn additional bonuses for high-performing referrals and milestone achievements.</p>
-                    </div>
-                    <div class="affiliate-feature">
-                        <h4><i class="fas fa-share-alt"></i> Marketing Tools</h4>
-                        <p>Access ready-to-use marketing materials, banners, and tracking links.</p>
-                    </div>
-                    <div class="affiliate-feature">
-                        <h4><i class="fas fa-headset"></i> Dedicated Support</h4>
-                        <p>Get personalized support from our affiliate management team.</p>
-                    </div>
-                </div>
-
-                <a href="#" class="btn" style="background:white;color:#6b46c1;margin-top:30px">
-                    <i class="fas fa-user-plus"></i>
-                    Join Affiliate Program
-                </a>
-            </section>
 
             <!-- ========== COMMUNITY FORUM SECTION ========== -->
             <section id="community" class="community-section fade-in">
@@ -5820,174 +5742,6 @@ first    <!DOCTYPE html>
                 </div>
             </section>
 
-            <!-- ========== EVENT CALENDAR SECTION ========== -->
-            <section id="events" class="events-section fade-in">
-                <h2 style="font-size:36px;margin-bottom:50px;text-align:center;background:linear-gradient(135deg, var(--text-primary) 30%, var(--accent1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Event Calendar</h2>
-                
-                <div class="calendar-view">
-                    <div class="calendar-header">
-                        <h3 style="color:var(--accent1);margin:0">March 2024</h3>
-                        <div class="calendar-nav">
-                            <button class="calendar-nav-btn"><i class="fas fa-chevron-left"></i></button>
-                            <button class="calendar-nav-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="calendar-grid">
-                        <div class="calendar-day-header">Sun</div>
-                        <div class="calendar-day-header">Mon</div>
-                        <div class="calendar-day-header">Tue</div>
-                        <div class="calendar-day-header">Wed</div>
-                        <div class="calendar-day-header">Thu</div>
-                        <div class="calendar-day-header">Fri</div>
-                        <div class="calendar-day-header">Sat</div>
-
-                        <!-- Calendar days would be populated by JavaScript -->
-                        <div class="calendar-day"><div class="day-number">25</div></div>
-                        <div class="calendar-day"><div class="day-number">26</div></div>
-                        <div class="calendar-day"><div class="day-number">27</div></div>
-                        <div class="calendar-day"><div class="day-number">28</div></div>
-                        <div class="calendar-day"><div class="day-number">29</div></div>
-                        <div class="calendar-day has-event"><div class="day-number">1</div><div class="event-indicator"></div></div>
-                        <div class="calendar-day"><div class="day-number">2</div></div>
-                        <div class="calendar-day"><div class="day-number">3</div></div>
-                        <div class="calendar-day has-event"><div class="day-number">4</div><div class="event-indicator"></div></div>
-                        <div class="calendar-day"><div class="day-number">5</div></div>
-                        <div class="calendar-day"><div class="day-number">6</div></div>
-                        <div class="calendar-day"><div class="day-number">7</div></div>
-                        <div class="calendar-day"><div class="day-number">8</div></div>
-                        <div class="calendar-day"><div class="day-number">9</div></div>
-                        <div class="calendar-day has-event"><div class="day-number">10</div><div class="event-indicator"></div></div>
-                        <div class="calendar-day"><div class="day-number">11</div></div>
-                        <div class="calendar-day"><div class="day-number">12</div></div>
-                        <div class="calendar-day"><div class="day-number">13</div></div>
-                        <div class="calendar-day"><div class="day-number">14</div></div>
-                        <div class="calendar-day"><div class="day-number">15</div></div>
-                        <div class="calendar-day"><div class="day-number">16</div></div>
-                        <div class="calendar-day has-event"><div class="day-number">17</div><div class="event-indicator"></div></div>
-                        <div class="calendar-day"><div class="day-number">18</div></div>
-                        <div class="calendar-day"><div class="day-number">19</div></div>
-                        <div class="calendar-day"><div class="day-number">20</div></div>
-                        <div class="calendar-day"><div class="day-number">21</div></div>
-                        <div class="calendar-day"><div class="day-number">22</div></div>
-                        <div class="calendar-day"><div class="day-number">23</div></div>
-                        <div class="calendar-day"><div class="day-number">24</div></div>
-                        <div class="calendar-day"><div class="day-number">25</div></div>
-                        <div class="calendar-day"><div class="day-number">26</div></div>
-                        <div class="calendar-day"><div class="day-number">27</div></div>
-                        <div class="calendar-day"><div class="day-number">28</div></div>
-                        <div class="calendar-day"><div class="day-number">29</div></div>
-                        <div class="calendar-day"><div class="day-number">30</div></div>
-                        <div class="calendar-day"><div class="day-number">31</div></div>
-                    </div>
-
-                    <div class="upcoming-events">
-                        <h3 style="color:var(--accent1);margin-bottom:20px">Upcoming Events</h3>
-                        <div class="event-list">
-                            <div class="event-item">
-                                <div class="event-date">
-                                    <div class="month">MAR</div>
-                                    <div class="day">1</div>
-                                </div>
-                                <div class="event-details">
-                                    <h4>Influencer Marketing Webinar</h4>
-                                    <p>Learn advanced strategies for 2024 with industry experts.</p>
-                                </div>
-                            </div>
-
-                            <div class="event-item">
-                                <div class="event-date">
-                                    <div class="month">MAR</div>
-                                    <div class="day">4</div>
-                                </div>
-                                <div class="event-details">
-                                    <h4>Content Creation Workshop</h4>
-                                    <p>Hands-on session for creating engaging social media content.</p>
-                                </div>
-                            </div>
-
-                            <div class="event-item">
-                                <div class="event-date">
-                                    <div class="month">MAR</div>
-                                    <div class="day">10</div>
-                                </div>
-                                <div class="event-details">
-                                    <h4>Brand Partnerships Summit</h4>
-                                    <p>Connect with premium brands and explore collaboration opportunities.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ========== PRESS/MEDIA KIT SECTION ========== -->
-            <section id="press" class="press-section fade-in">
-                <h2 style="font-size:36px;margin-bottom:50px;text-align:center;background:linear-gradient(135deg, var(--text-primary) 30%, var(--accent1) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Press & Media Kit</h2>
-                
-                <div class="press-kit">
-                    <div class="press-downloads">
-                        <div class="press-download card-3d">
-                            <div class="download-icon">
-                                <i class="fas fa-download"></i>
-                            </div>
-                            <h4>Brand Guidelines</h4>
-                            <p>Complete brand assets including logos, colors, fonts, and usage guidelines.</p>
-                            <button class="btn btn-creator">
-                                <i class="fas fa-download"></i>
-                                Download PDF
-                            </button>
-                        </div>
-
-                        <div class="press-download card-3d">
-                            <div class="download-icon">
-                                <i class="fas fa-images"></i>
-                            </div>
-                            <h4>Media Assets</h4>
-                            <p>High-resolution logos, product screenshots, and team photos for media use.</p>
-                            <button class="btn btn-creator">
-                                <i class="fas fa-download"></i>
-                                Download ZIP
-                            </button>
-                        </div>
-
-                        <div class="press-download card-3d">
-                            <div class="download-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <h4>Company Fact Sheet</h4>
-                            <p>Key statistics, company information, and executive bios for press releases.</p>
-                            <button class="btn btn-creator">
-                                <i class="fas fa-download"></i>
-                                Download PDF
-                            </button>
-                        </div>
-                    </div>
-
-                    <h3 style="color:var(--accent1);margin-bottom:25px">Brand Assets</h3>
-                    <div class="press-assets">
-                        <div class="press-asset card-3d">
-                            <div class="asset-preview" style="background-image: url('https://images.unsplash.com/photo-1634942537034-2531766767d1?w=100&h=100&fit=crop')"></div>
-                            <div>Primary Logo</div>
-                        </div>
-
-                        <div class="press-asset card-3d">
-                            <div class="asset-preview" style="background-image: url('https://images.unsplash.com/photo-1634942537034-2531766767d1?w=100&h=100&fit=crop')"></div>
-                            <div>White Logo</div>
-                        </div>
-
-                        <div class="press-asset card-3d">
-                            <div class="asset-preview" style="background-image: url('https://images.unsplash.com/photo-1634942537034-2531766767d1?w=100&h=100&fit=crop')"></div>
-                            <div>Black Logo</div>
-                        </div>
-
-                        <div class="press-asset card-3d">
-                            <div class="asset-preview" style="background-image: url('https://images.unsplash.com/photo-1579546929662-711aa81148cf?w=100&h=100&fit=crop')"></div>
-                            <div>Color Palette</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!-- ========== CAREER OPPORTUNITIES SECTION ========== -->
             <section id="careers" class="careers-section fade-in">
@@ -6195,7 +5949,6 @@ first    <!DOCTYPE html>
         // Initialize all functionality when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize all components
-            initializeThemeToggle();
             initializeMobileMenu();
             initializeChatWidget();
             initializeRegistrationModal();
@@ -6215,34 +5968,6 @@ first    <!DOCTYPE html>
                 }, 'success');
             }, 2000);
         });
-
-        // ========== THEME TOGGLE ========== //
-        function initializeThemeToggle() {
-            const themeToggle = document.getElementById('themeToggle');
-            const themeIcon = themeToggle.querySelector('i');
-            
-            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            updateThemeIcon(savedTheme);
-
-            themeToggle.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                updateThemeIcon(newTheme);
-                
-                showFloatingNotification({
-                    title: `Switched to ${newTheme} mode`,
-                    subtitle: 'Enjoy your preferred viewing experience'
-                }, 'info');
-            });
-
-            function updateThemeIcon(theme) {
-                themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-            }
-        }
 
         // ========== MOBILE MENU ========== //
         function initializeMobileMenu() {
